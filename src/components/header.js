@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import useUser from "../hooks/useUser";
 import { Link } from "react-router-dom";
 import FirebaseContext from "../context/firebase";
 import UserContext from "../context/user";
@@ -26,6 +27,9 @@ const Header = () => {
     setAnchorEl(null);
   };
   const [actif, setActif] = useState(1);
+  const {
+    user: { avatar },
+  } = useUser();
   return (
     <header className="h-12 bg-white border-b border-gray-500 mb-8">
       <div className="container mx-auto max-w-screen-lg h-full">
@@ -75,7 +79,7 @@ const Header = () => {
             <div className="flex items-center cursor-pointer">
               <img
                 className="rounded-full h-6 w-6 ml-2 flex"
-                src={`/images/avatars/${user.displayName}.jpg`}
+                src={`/images/avatars/${avatar}.jpg`}
                 alt="profil"
                 onClick={handleClick}
               />

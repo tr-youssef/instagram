@@ -38,6 +38,7 @@ export default function Signup() {
           following: [],
           followers: [],
           dateCreated: Date.now(),
+          avatar: "noavatar",
         });
         history.push(ROUTES.DASHBOARD);
       } catch (error) {

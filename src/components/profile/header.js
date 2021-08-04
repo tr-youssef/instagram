@@ -5,6 +5,7 @@ import { isUserFollowingProfile, toggleFollow } from "../../services/firebase";
 
 export default function Header({
   username,
+  avatar,
   profile,
   publications,
   followers,
@@ -43,7 +44,7 @@ export default function Header({
       <div className="flex items-center  col-span-1 pb-8 justify-center">
         <img
           className="rounded-full w-24 flex mr-3"
-          src={`/images/avatars/${username}.jpg`}
+          src={`/images/avatars/${avatar}.jpg`}
           alt="Avatar"
         />
         <div className="flex-col ml-32 items-center justify-center">

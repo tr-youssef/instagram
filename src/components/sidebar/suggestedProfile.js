@@ -10,6 +10,7 @@ const SuggestedProfile = ({
   profileDocId,
   username,
   profileId,
+  avatar,
   userId,
   loggedInUserDocId,
 }) => {
@@ -26,7 +27,7 @@ const SuggestedProfile = ({
       <div className="flex items-center justify-between">
         <img
           className="rounded-full w-8 flex mr-3"
-          src={`/images/avatars/${username}.jpg`}
+          src={`/images/avatars/${avatar}.jpg`}
           alt="Avatar"
         />
         <Link to={`/p/${username}`}>
@@ -50,6 +51,7 @@ export default SuggestedProfile;
 
 SuggestedProfile.propTypes = {
   profileDocId: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
   username: PropTypes.string.isRequired,
   profileId: PropTypes.string.isRequired,
   userId: PropTypes.string.isRequired,

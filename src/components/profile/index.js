@@ -29,6 +29,7 @@ export default function Profile({ user }) {
       <Header
         username={user.username}
         profile={profile}
+        avatar={user.avatar}
         publications={photosCollection.length}
         followers={followers}
         setFollowers={dispatch}
@@ -41,7 +42,8 @@ export default function Profile({ user }) {
 Profile.propTypes = {
   user: PropTypes.shape({
     dateCreated: PropTypes.number.isRequired,
-    emailAddresse: PropTypes.string.isRequired,
+    emailAddress: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
     followers: PropTypes.array.isRequired,
     following: PropTypes.array.isRequired,
     fullName: PropTypes.string.isRequired,
